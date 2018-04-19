@@ -17,8 +17,8 @@
 /* Local Defines                                                   */
 /*                                                                 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#define ULR_MIN_DISTANCE		(0.08f)
-#define ULR_MAX_DISTANCE		(45.0f)
+#define ULR_MIN_DISTANCE		(0.36f)
+#define ULR_MAX_DISTANCE		(30.0f)
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
