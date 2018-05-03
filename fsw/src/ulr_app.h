@@ -55,7 +55,7 @@ extern "C" {
 #include "ulr_events.h"
 #include "ulr_tbldefs.h"
 #include "px4_msgs.h"
-
+#include "math/filters/LowPassFilter2p.hpp"
 
 /************************************************************************
  ** Local Defines
@@ -137,6 +137,8 @@ public:
     uint32 ListenerTaskID;
 
     uint32 Mutex;
+    
+    math::LowPassFilter2p   m_height_filter;
 
     bool ChildContinueFlag;
 

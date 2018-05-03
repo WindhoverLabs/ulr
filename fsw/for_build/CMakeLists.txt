@@ -40,6 +40,7 @@ add_airliner_app_unit_test(ulr-ut
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_msg.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_tbldefs.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_version.h
+        ${PX4LIB_LIB_SOURCES}
         
     INCLUDES
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/
