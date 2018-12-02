@@ -11,7 +11,7 @@ module.exports = class CfeCdrPlugin extends CdrPlugin {
 
   getContent() {
     var result = {
-      shortDescription: 'ULR',
+      shortDescription: 'uLanding Radar',
       longDescription: 'Aerotenna uLanding Radar (ULR).',
       nodes: {
         main: {
