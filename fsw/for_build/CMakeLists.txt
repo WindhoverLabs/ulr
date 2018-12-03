@@ -7,6 +7,7 @@ add_airliner_app_def(ulr
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_config_utils.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_events.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_msg.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_symbols.c
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_tbldefs.h
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_version.h
 
