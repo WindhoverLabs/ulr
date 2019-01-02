@@ -17,8 +17,8 @@
 /* Local Defines                                                   */
 /*                                                                 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#define ULR_MIN_DISTANCE		(0.315f)
-#define ULR_MAX_DISTANCE		(50.0f)
+#define ULR_MIN_DISTANCE		(0.36f)
+#define ULR_MAX_DISTANCE		(30.0f)
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -35,7 +35,8 @@ ULR oULR;
 /* Default constructor.                                            */
 /*                                                                 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-ULR::ULR()
+ULR::ULR() :
+    m_height_filter(250, 30)
 {
 
 }
@@ -657,9 +658,12 @@ void  ULR::ListenerTaskMain(void)
 						{
 						    OS_MutSemTake(Mutex);
 						    DistanceSensor.Timestamp = PX4LIB_GetPX4TimeUs();
-							DistanceSensor.MinDistance = ULR_MIN_DISTANCE / 10.0f;
-							DistanceSensor.MaxDistance = ULR_MAX_DISTANCE / 10.0f;
-							DistanceSensor.CurrentDistance = ((UartMessage.AltitudeH << 8) + UartMessage.AltitudeL) * 0.045f;
+							DistanceSensor.MinDistance = ULR_MIN_DISTANCE;
+							DistanceSensor.MaxDistance = ULR_MAX_DISTANCE;
+							
+							DistanceSensor.CurrentDistance = m_height_filter.apply( ((UartMessage.AltitudeH << 8) + UartMessage.AltitudeL) / 100.0f);
+							
+							//DistanceSensor.CurrentDistance = ((UartMessage.AltitudeH << 8) + UartMessage.AltitudeL) / 100.0f;
 							DistanceSensor.Covariance = ULR_SENS_VARIANCE;
 							DistanceSensor.Type = PX4_DISTANCE_SENSOR_RADAR;
 							DistanceSensor.ID = 0;
