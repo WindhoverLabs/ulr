@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#define ULR_LISTENER_TASK_FLAGS            OS_ENABLE_CORE_0
+
 /*
 ** ULR Platform Configuration Parameter Definitions
 */
@@ -108,6 +110,16 @@ extern "C" {
 **       This parameter must be at least 1000 (ms).
 */
 #define ULR_STARTUP_TIMEOUT_MSEC    (1000)
+
+/* TODO:  Add Doxygen */
+#define ULR_CUSTOM_PORT_PATH 	"/dev/ttyS6"
+#define ULR_SENS_VARIANCE 		(0.045f * 0.045f)
+
+
+#define ULR_LISTENER_TASK_PRIORITY      (64)
+#define ULR_LISTENER_TASK_STACK_SIZE    (16000)
+#define ULR_LISTENER_TASK_NAME          "ULR_LISTENER"
+#define ULR_MUTEX_NAME                  "ULR_MUTEX"
 
 
 #ifdef __cplusplus
