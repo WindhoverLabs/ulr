@@ -1,5 +1,5 @@
 
-add_airliner_app_def(ulr
+buildliner_add_app_def(ulr
     FILE ULR
     SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/ulr_app.cpp
@@ -20,7 +20,7 @@ add_airliner_app_def(ulr
 
 )
 
-add_airliner_app_unit_test(ulr-ut
+buildliner_add_app_unit_test(ulr-ut
     UTASSERT
     NO_HELGRIND
     NO_MASSIF
